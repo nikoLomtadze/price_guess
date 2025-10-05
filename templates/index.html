@@ -1,0 +1,18 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Price Guess — Demo</title>
+</head>
+<body>
+  <h1>{{ listing.title }}</h1>
+  <p><em>{{ listing.location }}</em></p>
+  <img src="{{ url_for('static', filename='images/' + listing.image) }}" alt="listing" style="max-width:600px;">
+  <form action="{{ url_for('guess') }}" method="post">
+    <input type="hidden" name="listing_id" value="{{ listing.id }}">
+    <label>Guess the price (numeric): <input type="number" name="price" required step="1"></label>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

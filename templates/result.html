@@ -1,0 +1,18 @@
+<!-- templates/result.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Result — Price Guess</title>
+</head>
+<body>
+  <h1>Result for: {{ listing.title }}</h1>
+  <p>Your guess: {{ guess }}</p>
+  <p>Actual price: {{ actual }}</p>
+  {% if diff is not none %}
+    <p>Difference: {{ diff }}</p>
+  {% endif %}
+  <h2>Score: {{ score }}/100</h2>
+  <a href="{{ url_for('index') }}">Play again (random)</a>
+</body>
+</html>
